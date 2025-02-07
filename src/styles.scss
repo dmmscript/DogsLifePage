@@ -1,0 +1,35 @@
+:root {
+    --blue: #2196F3;
+    --yellow: #FFEB3B;
+    --green: #4CAF50;
+    --white: #F5F5F5;
+    --gray: #E0E0E0;
+    --black: #212121;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('./assets/fonts/Nunito/static/Nunito-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('./assets/fonts/Nunito/static/Nunito-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('./assets/fonts/Nunito/static/Nunito-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Nunito';
+    src: url('./assets/fonts/Nunito/static/Nunito-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
