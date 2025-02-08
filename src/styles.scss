@@ -7,6 +7,18 @@
     --black: #212121;
 }
 
+* {
+    font-family: 'Nunito';
+    box-sizing: border-box;
+    padding: 0;
+    margin: 10;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
 @font-face {
     font-family: 'Nunito';
     src: url('./assets/fonts/Nunito/static/Nunito-Light.ttf') format('truetype');
