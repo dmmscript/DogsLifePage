@@ -1,9 +1,11 @@
 .dog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); // 5 colunas padrão
-  gap: 16px; // Espaçamento entre os cards
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 16px; 
   padding: 20px;
   justify-content: center;
+  overflow-x: auto;
 
   img {
     width: 100%;
@@ -18,15 +20,10 @@
   }
 }
 
-/* 📌 Responsividade */
 @media (max-width: 1024px) {
   .dog-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); // Menos colunas em telas menores
-  }
-}
-
-@media (max-width: 600px) {
-  .dog-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); // Em celulares, reduz ainda mais
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap; 
   }
 }
