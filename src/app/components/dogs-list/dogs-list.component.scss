@@ -1,0 +1,32 @@
+.dog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); // 5 colunas padrão
+  gap: 16px; // Espaçamento entre os cards
+  padding: 20px;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* 📌 Responsividade */
+@media (max-width: 1024px) {
+  .dog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); // Menos colunas em telas menores
+  }
+}
+
+@media (max-width: 600px) {
+  .dog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); // Em celulares, reduz ainda mais
+  }
+}
