@@ -23,7 +23,8 @@ export class ServicesDogService {
           dog.breeds && dog.breeds.length > 0 &&
           dog.breeds[0]?.name !== 'Unknown Breed' && 
           dog.url !== null && 
-          dog.breeds[0]?.temperament !== null
+          dog.breeds[0]?.temperament !== null &&
+          dog.breeds[0]?.temperament.length > 15
         )
       )
     );
