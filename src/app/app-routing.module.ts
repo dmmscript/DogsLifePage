@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DogsByBreedComponent } from './dogs-by-breed/dogs-by-breed.component';
+import { DogsByBreedComponent } from './components/dogs-by-breed/dogs-by-breed.component';
 import { DogsListComponent } from './components/dogs-list/dogs-list.component';
 
 const routes: Routes = [

@@ -1,0 +1,6 @@
+<div>
+  <h2>Cachorros da Raça: {{ breed }}</h2>
+</div>
+<div class="dog-grid">
+  <app-dog-card *ngFor="let dog of dogs" [dog]="dog"></app-dog-card>
+</div>

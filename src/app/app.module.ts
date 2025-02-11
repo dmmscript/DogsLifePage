@@ -10,7 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { DogsListComponent } from './components/dogs-list/dogs-list.component';
 import { DogCardComponent } from './components/dog-card/dog-card.component';
 import { BreedsListComponent } from './components/breeds-list/breeds-list.component';
-import { DogsByBreedComponent } from './dogs-by-breed/dogs-by-breed.component';
+import { DogsByBreedComponent } from './components/dogs-by-breed/dogs-by-breed.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
