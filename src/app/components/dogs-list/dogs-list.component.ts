@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesDogService } from 'src/app/services-dog.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dogs-list',
@@ -14,12 +14,20 @@ import { Router } from '@angular/router';
     searchQuery: string = '';
     selectedBreed: string = '';
   
-  constructor(private dogService: ServicesDogService, private router: Router) { }
+  constructor(private dogService: ServicesDogService, private router: Router, private route: ActivatedRoute) { }
   
   ngOnInit(): void {
-    this.loadDogs();
+    // this.loadDogs();
     this.loadBreeds();
-  }
+
+  this.route.paramMap.subscribe(params => {
+    const breed = params.get('breed');
+    if (breed) {
+      this.selectedBreed = breed;
+    }
+    this.loadDogs(); // Carrega os cachorros, aplicando filtro se necessário
+  });
+}
 
   loadDogs(): void {
     this.dogService.getDogs().subscribe(images => {
@@ -52,6 +60,6 @@ import { Router } from '@angular/router';
 
   clearBreedFilter(): void {
     this.selectedBreed = '';
-    this.searchDogs();
+    this.router.navigate(['/dogs']);
   }
 }

@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ServicesDogService } from 'src/app/services-dog.service';
 
 @Component({
-  selector: 'app-dog-by-breed',
+  selector: 'app-dogs-by-breed',
   templateUrl: './dogs-by-breed.component.html',
   styleUrls: ['./dogs-by-breed.component.scss']
 })
@@ -22,8 +22,9 @@ export class DogsByBreedComponent implements OnInit {
   }
 
   loadDogsByBreed(): void {
+    // Aqui, você pode usar um método do serviço que já filtre por raça,
+    // ou filtrar a lista completa dos cachorros conforme a sua lógica.
     this.dogService.getDogs().subscribe(data => {
-      // Filtra os cães com base na raça selecionada
       this.dogs = data.filter(dog => dog.breeds[0]?.name === this.breed);
     });
   }

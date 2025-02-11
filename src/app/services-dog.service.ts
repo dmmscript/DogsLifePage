@@ -33,6 +33,20 @@ export class ServicesDogService {
     const headers = new HttpHeaders().set('x-api-key', this.apiKey);
     return this.http.get<any[]>(this.breedsUrl, { headers });
   }
+
+  getDogsByBreed(breedId: string): Observable<any[]> {
+    const headers = new HttpHeaders().set('x-api-key', this.apiKey);
+    const params = new HttpParams().set('breed', breedId).set('limit', '15');
+    return this.http.get<any[]>(this.apiUrl, { headers, params }).pipe(
+      map((dogs: any[]) =>
+        dogs.filter((dog: Dog) =>
+          dog.breeds && dog.breeds.length > 0 &&
+          dog.breeds[0]?.name === breedId &&
+          dog.url !== null
+        )
+      )
+    );
+  }
 }
 
 interface Dog {

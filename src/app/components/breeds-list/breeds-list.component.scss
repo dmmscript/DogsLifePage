@@ -8,11 +8,73 @@
 body {
     margin: 0;
     padding: 0;
-    display: grid;
+}
+
+.breeds-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens */
+    justify-content: flex-start; /* Alinha os itens no topo */
+    padding: 20px;
+    width: 100%;
+    background-color: #f9f9f9;
 }
 
 h3 {
-    justify-items: center;
-    align-items: center;
     color: var(--blue);
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 30px;
+     /* Espaçamento entre título e campo de pesquisa */
+}
+
+.breed-search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.breed-search input {
+    padding: 8px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+.breed-search button {
+    padding: 8px 12px;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.breed-search button:hover {
+    background-color: darkblue;
+}
+
+/* Lista de raças (grid) */
+.breed-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas */
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.breed-grid div {
+    background-color: var(--white);
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.breed-grid div:hover {
+    background-color: var(--yellow);
 }
