@@ -1,23 +1,12 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-bottom: 30px;
-}
-
-header .logo-container {
+  }
+  
+  .logo-container {
     background: var(--yellow);
     width: 100%;
     height: 120px;
@@ -28,55 +17,65 @@ header .logo-container {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-header .logo-container img {
+  }
+  
+  .logo-container img {
     height: 100px;
-    margin: 0;
-    padding: 0;
-    border: none;
-    display: block;     
-}
-
-header .text-container {
+    display: block;
+  }
+  
+  .text-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     max-width: 80%;
     margin: 0 auto;
-}
-
-header .text-container h1 {
+  }
+  
+  .text-container h1 {
     padding-top: 130px;
     padding-bottom: 10px;
     font-size: 24px;
-    color: var(--blue);
-}
-
-header .text-container p {
+    color: var(--purple);
+  }
+  
+  .text-container p {
     font-size: 18px;
     color: var(--black);
     width: 100%;
-}
-
-header .text-container .heading {
+  }
+  
+  .heading {
     display: flex;
     flex-direction: column;
     gap: 14px;
     margin-bottom: 24px;
-}
-
-header .text-container .heading .heading-border {
+  }
+  
+  .heading-border {
     height: 12px;
     width: 40%;
-    background-color: var(--blue);
-}
-
-header .cards h2 {
+    background-color: var(--purple);
+  }
+  
+  .cards h2 {
     font-size: 30px;
-    color: var(--blue);
-    align-items: center;
+    font-weight: bold;
+    color: var(--purple);
     margin: 0 auto;
     padding-top: 24px;
-
-}
+    letter-spacing: 2px;
+  }
+  
+  @media (max-width: 768px) {
+    .text-container h1 {
+      font-size: 20px;
+    }
+    .text-container p {
+      font-size: 16px;
+    }
+    .cards h2 {
+      font-size: 24px;
+    }
+  }
+  

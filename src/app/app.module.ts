@@ -11,6 +11,12 @@ import { DogsListComponent } from './components/dogs-list/dogs-list.component';
 import { DogCardComponent } from './components/dog-card/dog-card.component';
 import { BreedsListComponent } from './components/breeds-list/breeds-list.component';
 import { DogsByBreedComponent } from './dogs-by-breed/dogs-by-breed.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 // import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
@@ -29,6 +35,11 @@ import { DogsByBreedComponent } from './dogs-by-breed/dogs-by-breed.component';
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
+    BrowserAnimationsModule,
+    MatButtonModule, 
+    MatCardModule,
+    MatInputModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

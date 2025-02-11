@@ -1,25 +1,22 @@
 h1 {
   font-family: 'Nunito';
-  color: var(--blue);
-  font-weight: 700;
-}  
+  color: var(--purple);
+  font-weight: bold;
+}
 
-/* Container para empilhar os componentes verticalmente */
 .parent-container {
   display: flex;
-  flex-direction: column; /* Alinha os componentes na vertical */
-  justify-content: flex-start; /* Alinha os componentes ao topo */
-  align-items: center; /* Centraliza os componentes horizontalmente */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   padding: 20px;
 }
 
-/* Estilo para o componente dogs-list */
 .app-dogs-list {
-  width: 100%; /* Ocupe toda a largura disponível */
-  margin-bottom: 20px; /* Espaço abaixo do dogs-list */
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-/* Estilo para o componente breeds-list */
 .app-breeds-list {
-  width: 100%; /* Ocupe toda a largura disponível */
+  width: 100%;
 }
