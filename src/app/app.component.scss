@@ -3,3 +3,21 @@ h1 {
     color: var(--blue);
     font-weight: 700;
 }   
+
+.parent-container {
+    display: flex;
+    justify-content: space-between; // Mantém os elementos separados
+    align-items: flex-start; // Alinha no topo
+    padding: 20px;
+  
+    app-dogs-list {
+      flex: 3; // Ocupa mais espaço na esquerda
+      margin-right: 20px; // Espaçamento entre os elementos
+    }
+  
+    app-breeds-list {
+      flex: 1; // Ocupa menos espaço e fica à direita
+      text-align: right; // Alinha o conteúdo dentro do componente
+    }
+  }
+  

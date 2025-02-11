@@ -10,6 +10,8 @@ import { environment } from 'src/environments/environment';
 export class ServicesDogService {
   private apiUrl = environment.apiUrl;
   private apiKey = environment.apiKey;
+  private breedsUrl = environment.breedsUrl;
+  
   constructor(private http: HttpClient) {}
 
   getDogs(): Observable<Dog[]> {
@@ -17,13 +19,36 @@ export class ServicesDogService {
     const params = new HttpParams().set('has_breeds', '1');
     return this.http.get<any[]>(this.apiUrl, { headers, params }).pipe(
       map((dogs: any[]) =>
-        dogs.filter((dog: Dog) => dog.breed !== 'Unknown Breed' && dog.url !== null)
+        dogs.filter((dog: Dog) =>
+          dog.breeds && dog.breeds.length > 0 &&
+          dog.breeds[0]?.name !== 'Unknown Breed' && 
+          dog.url !== null && 
+          dog.breeds[0]?.temperament !== null
+        )
       )
     );
+  }
+
+  getBreeds(): Observable<Breed[]> {
+    const headers = new HttpHeaders().set('x-api-key', this.apiKey);
+    return this.http.get<any[]>(this.breedsUrl, { headers });
   }
 }
 
 interface Dog {
-  breed: string;
   url: string | null;
+  breeds: { name: string; temperament: string }[];
+  width: number;
+  height: number;
+  favourite: any;
+}
+
+interface Breed {
+  id: number;
+  name: string;
+  weight: string;
+  height: string;
+  life_span: string;
+  bred_for: string;
+  breed_group: string;
 }

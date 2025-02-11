@@ -1,0 +1,10 @@
+<div class="breeds-list">
+  <h3>Raças de Cães</h3>
+  <div class="breed-search">
+    <input [(ngModel)]="searchQuery" placeholder="Pesquisar por raça ou temperamento" />
+    <button (click)="searchDogs()">🔍</button>
+  </div>
+    <li *ngFor="let breed of breeds">
+      <button (click)="onBreedClick(breed)">{{ breed }}</button>
+    </li>
+</div>
