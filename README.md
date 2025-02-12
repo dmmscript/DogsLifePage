@@ -1,27 +1,64 @@
-# DogsLifePage
+<h1 align="center" style="font-weight: bold;">Dogs Life Page</h1>
+<p align="center">
+<b>Dogs Life Page</b> is a simple project designed to display dog images and provide a complete list of dog breeds using the <b>The Dog API</b>. The purpose is to provide a view of available breeds, showing random dog images along with temperament's information for each breed.
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+<h2 style="font-weight: bold;">📍 Features</h2>
 
-## Development server
+- <b>Dog Image Gallery</b>: Displays random dog images with breed information.
+- <b>Breed Search</b>: Allows users to search for specific dog breeds.
+- <b>Breed List</b>: Displays all available dog breeds with temperament's details.
+- <b>Responsive Design</b>: Built with the Angular Material Design System for a modern and responsive user interface.
+- <b>Routing</b>: Seamless navigation between pages with Angular Routing.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 💻 Technologies
 
-## Code scaffolding
+- Angular 16
+- The Dog API
+- Angular Material Design System
+- Node.js v20.18.2
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 💡 How to Use
 
-## Build
+1. Clone the repository:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+   ```bash
+   git clone https://github.com/dmmscript/DogsLifePage.git
+   ```
 
-## Running unit tests
+2. Navigate to the project directory:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```bash
+   cd DogsLifePage
+   ```
 
-## Running end-to-end tests
+3. Install dependencies:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   npm install
+   ```
 
-## Further help
+4. Create a folder called `environments` inside the `src` directory:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```bash
+   mkdir src/environments
+   ```
+
+5. Inside the `src/environments` folder, create a file called `environment.ts` with the following content:
+
+   ```typescript
+   export const environment = {
+     production: false,
+     apiUrl: "https://api.thedogapi.com/v1/images/search?limit=15",
+     apiKey: "YOUR_API_KEY", // Replace with your own API key
+     breedsUrl: "https://api.thedogapi.com/v1/breeds?",
+   };
+   ```
+
+6. Start the development server:
+
+   ```bash
+   ng serve
+   ```
+
+7. Open your browser and go to `http://localhost:4200` to view the application.
