@@ -83,6 +83,8 @@ h3 {
 @media (max-width: 480px) {
   .breed-grid {
     grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+
   }
   h3 {
     font-size: 24px;

@@ -52,7 +52,7 @@
   width: 80%;
   overflow-x: auto;
   margin: auto;
-  justify-content: center;
+  justify-content: flex-start;
   padding-bottom: 10px;
 }
 
@@ -83,6 +83,12 @@
 }
 
 @media (max-width: 1024px) {
+  .dog-grid {
+    grid-template-columns: repeat(5, minmax(220px, 1fr));
+    overflow-x: auto;
+    width: 80%;
+    ;
+  }
   .intro-container h1 {
     font-size: 20px;
   }
@@ -96,8 +102,10 @@
 
 @media (max-width: 768px) {
   .dog-grid {
-    grid-template-columns: repeat(5, minmax(120px, 1fr));
-    width: auto;
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+    overflow-x: auto;
+    width: 80%;
+    ;
   }
 
   .intro-container h1 {
@@ -115,8 +123,9 @@
 @media (max-width: 480px) {
   .dog-grid {
     grid-template-columns: repeat(5, minmax(180px, 1fr));
-    width: auto;
     overflow-x: auto;
+    width: 80%;
+
   }
 
   .intro-container h1 {
