@@ -3,20 +3,3 @@ h1 {
   color: var(--purple);
   font-weight: bold;
 }
-
-.parent-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px;
-}
-
-.app-dogs-list {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.app-breeds-list {
-  width: 100%;
-}

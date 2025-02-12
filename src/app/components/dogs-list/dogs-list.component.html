@@ -1,3 +1,16 @@
+<div class="intro-container">
+  <div class="dog-life-title">
+      <h1>Dog's Life & Dog is Life.<br/> Either way, life is simply better with a dog!</h1>
+      <span class="title-divider"></span>
+  </div>
+  <p>Dogs bring joy, companionship, and unconditional love into our lives. Whether they’re running by your side, greeting you with a wagging tail, or simply being there, life with a dog is a life well-lived. Ready to find your new best friend?</p>
+</div>  
+<div class="cards">
+  <h2>D • O • G • S </h2>
+</div>
 <div class="dog-grid">
-  <app-dog-card *ngFor="let dog of dogs" [dog]="dog"></app-dog-card>
+  <app-dog-card *ngFor="let dog of filteredDogs" [dog]="dog"></app-dog-card>
+</div>
+<div class="search-breeds">
+  <button (click)="goToBreeds()">BREED's LIST</button>
 </div>

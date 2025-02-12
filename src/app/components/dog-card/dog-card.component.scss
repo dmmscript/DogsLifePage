@@ -1,6 +1,6 @@
 .dog-card {
   width: 100%;
-  max-width: 200px;
+  max-width: 250px;
   height: 350px;
   background: white;
   border-radius: 8px;
@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 15px;
 }
 
 .dog-card img {
@@ -35,17 +36,34 @@
 
 @media (max-width: 768px) {
   .dog-card {
-    max-width: 250px;
+    max-width: 220px;
     height: 300px;
   }
   .dog-card img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
   .dog-card h3 {
     font-size: 16px;
   }
   .dog-card p {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dog-card {
+    max-width: 180px;
+    height: 250px;
+  }
+  .dog-card img {
+    width: 80px;
+    height: 80px;
+  }
+  .dog-card h3 {
+    font-size: 14px;
+  }
+  .dog-card p {
+    font-size: 10px;
   }
 }

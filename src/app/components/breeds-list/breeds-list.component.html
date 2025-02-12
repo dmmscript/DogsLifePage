@@ -1,16 +1,14 @@
 <div class="breeds-list">
   <h3>DOG's BREEDS</h3>
   <div class="breed-search">
-    <!-- Campo de pesquisa -->
     <input
       type="text"
       [(ngModel)]="searchQuery"
       (input)="updateFilteredBreeds()"
-      placeholder="Pesquisar por raça..."
+      placeholder="Search by breed..."
     />
   </div>
 
-  <!-- A lista de raças deve estar dentro de um contêiner de grid -->
   <div class="breed-grid">
     <div *ngFor="let breed of filteredBreeds" (click)="onBreedClick(breed)">
       {{ breed.name }}
