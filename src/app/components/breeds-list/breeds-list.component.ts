@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-breeds-list',
   templateUrl: './breeds-list.component.html',
-  styleUrls: ['./breeds-list.component.scss']
+  styleUrls: ['./breeds-list.component.scss'],
 })
 export class BreedsListComponent implements OnInit {
   breeds: any[] = [];
@@ -19,16 +19,17 @@ export class BreedsListComponent implements OnInit {
   }
 
   loadBreeds(): void {
-    this.dogService.getBreeds().subscribe(breeds => {
+    this.dogService.getBreeds().subscribe((breeds) => {
       this.breeds = breeds;
-      this.filteredBreeds = breeds; // Inicialmente, todas as raças são exibidas
+      this.filteredBreeds = breeds;
+
+      console.log('Loaded breeds:', this.breeds);
     });
   }
 
-  // Atualiza a lista filtrada sempre que o usuário digita algo
   updateFilteredBreeds(): void {
     if (this.searchQuery.trim()) {
-      this.filteredBreeds = this.breeds.filter(breed =>
+      this.filteredBreeds = this.breeds.filter((breed) =>
         breed.name.toLowerCase().includes(this.searchQuery.toLowerCase())
       );
     } else {
@@ -37,8 +38,6 @@ export class BreedsListComponent implements OnInit {
   }
 
   onBreedClick(breed: any): void {
-    // Navega para a rota passando o nome da raça.
-    // Caso prefira usar o id, ajuste a rota e a filtragem no componente DogsByBreed.
-    this.router.navigate(['/dogs-by-breed', breed.name]);
+    this.router.navigate(['breeds-list', breed.name]);
   }
 }

@@ -5,48 +5,45 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ServicesDogService {
   private apiUrl = environment.apiUrl;
   private apiKey = environment.apiKey;
   private breedsUrl = environment.breedsUrl;
-  
+
   constructor(private http: HttpClient) {}
 
   getDogs(): Observable<Dog[]> {
     const headers = new HttpHeaders().set('x-api-key', this.apiKey);
     const params = new HttpParams().set('has_breeds', '1');
     return this.http.get<any[]>(this.apiUrl, { headers, params }).pipe(
-      map((dogs: any[]) =>
-        dogs.filter((dog: Dog) =>
-          dog.breeds && dog.breeds.length > 0 &&
-          dog.breeds[0]?.name !== 'Unknown Breed' && 
-          dog.url !== null && 
-          dog.breeds[0]?.temperament !== null &&
-          dog.breeds[0]?.temperament.length > 15
-        )
-      )
+      map((dogs: any[]) => {
+        const uniqueBreeds = new Map<string, Dog>();
+
+        dogs.forEach((dog: Dog) => {
+          const breedName = dog.breeds[0]?.name;
+          const isValid =
+            dog.breeds &&
+            dog.breeds.length > 0 &&
+            breedName !== 'Unknown Breed' &&
+            dog.url !== null &&
+            dog.breeds[0]?.temperament !== null &&
+            dog.breeds[0]?.temperament.length > 15;
+
+          if (isValid && !uniqueBreeds.has(breedName)) {
+            uniqueBreeds.set(breedName, dog);
+          }
+        });
+
+        return Array.from(uniqueBreeds.values()).slice(0, 15);
+      })
     );
   }
 
   getBreeds(): Observable<Breed[]> {
     const headers = new HttpHeaders().set('x-api-key', this.apiKey);
     return this.http.get<any[]>(this.breedsUrl, { headers });
-  }
-
-  getDogsByBreed(breedId: string): Observable<any[]> {
-    const headers = new HttpHeaders().set('x-api-key', this.apiKey);
-    const params = new HttpParams().set('breed', breedId).set('limit', '15');
-    return this.http.get<any[]>(this.apiUrl, { headers, params }).pipe(
-      map((dogs: any[]) =>
-        dogs.filter((dog: Dog) =>
-          dog.breeds && dog.breeds.length > 0 &&
-          dog.breeds[0]?.name === breedId &&
-          dog.url !== null
-        )
-      )
-    );
   }
 }
 

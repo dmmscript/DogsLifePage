@@ -49,7 +49,7 @@
    ```typescript
    export const environment = {
      production: false,
-     apiUrl: "https://api.thedogapi.com/v1/images/search?limit=15",
+     apiUrl: "https://api.thedogapi.com/v1/images/search?limit=50",
      apiKey: "YOUR_API_KEY", // Replace with your own API key
      breedsUrl: "https://api.thedogapi.com/v1/breeds?",
    };

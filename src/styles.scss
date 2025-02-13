@@ -1,15 +1,15 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 :root {
-  --purple: #673AB7;
-  --yellow: #FFC107;
-  --white: #F5F5F5;
-  --gray: #E0E0E0;
+  --purple: #673ab7;
+  --yellow: #ffc107;
+  --white: #ffffff;
+  --gray: #e0e0e0;
   --black: #212121;
 }
 
 * {
-  font-family: 'Nunito';
+  font-family: "Nunito";
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -23,40 +23,43 @@ body {
 }
 
 @font-face {
-  font-family: 'Nunito';
-  src: url('./assets/fonts/Nunito/static/Nunito-Light.ttf') format('truetype');
+  font-family: "Nunito";
+  src: url("./assets/fonts/Nunito/static/Nunito-Light.ttf") format("truetype");
   font-weight: 300;
 }
 
 @font-face {
-  font-family: 'Nunito';
-  src: url('./assets/fonts/Nunito/static/Nunito-Medium.ttf') format('truetype');
+  font-family: "Nunito";
+  src: url("./assets/fonts/Nunito/static/Nunito-Medium.ttf") format("truetype");
   font-weight: 500;
 }
 
 @font-face {
-  font-family: 'Nunito';
-  src: url('./assets/fonts/Nunito/static/Nunito-Bold.ttf') format('truetype');
+  font-family: "Nunito";
+  src: url("./assets/fonts/Nunito/static/Nunito-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 
 @font-face {
-  font-family: 'Nunito';
-  src: url('./assets/fonts/Nunito/static/Nunito-Black.ttf') format('truetype');
+  font-family: "Nunito";
+  src: url("./assets/fonts/Nunito/static/Nunito-Black.ttf") format("truetype");
   font-weight: 900;
 }
 
-html, body { 
+html,
+body {
   height: 100%;
 }
 
-$custom-theme: mat.define-light-theme((
-  color: (
-    primary: mat.define-palette(mat.$deep-purple-palette),
-    accent: mat.define-palette(mat.$amber-palette),
-  ),
-  typography: mat.define-typography-config(),
-  density: 0,
-));
+$custom-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: mat.define-palette(mat.$deep-purple-palette),
+      accent: mat.define-palette(mat.$amber-palette),
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
 
 @include mat.all-component-themes($custom-theme);

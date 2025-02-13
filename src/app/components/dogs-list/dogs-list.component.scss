@@ -86,8 +86,9 @@
   .dog-grid {
     grid-template-columns: repeat(5, minmax(220px, 1fr));
     overflow-x: auto;
+    margin: auto;
+    justify-content: flex-start;
     width: 80%;
-    ;
   }
   .intro-container h1 {
     font-size: 20px;
@@ -104,17 +105,16 @@
   .dog-grid {
     grid-template-columns: repeat(5, minmax(200px, 1fr));
     overflow-x: auto;
+    margin: auto;
+    justify-content: flex-start;
     width: 80%;
-    ;
   }
-
   .intro-container h1 {
     font-size: 20px;
   }
   .intro-container p {
     font-size: 16px;
   }
-
   .cards h2 {
     font-size: 24px;
   }
@@ -124,17 +124,16 @@
   .dog-grid {
     grid-template-columns: repeat(5, minmax(180px, 1fr));
     overflow-x: auto;
+    margin: auto;
+    justify-content: flex-start;
     width: 80%;
-
   }
-
   .intro-container h1 {
     font-size: 18px;
   }
   .intro-container p {
     font-size: 14px;
   }
-
   .cards h2 {
     font-size: 20px;
   }

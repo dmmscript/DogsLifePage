@@ -1,5 +1,7 @@
 <div class="dog-card">
-  <img [src]="dog.url" [alt]="dog.breeds?.[0]?.name || 'Dog'">
+  <img [src]="dog.url" [alt]="dog.breeds?.[0]?.name || 'Dog'" />
   <h3>{{ dog.breeds?.[0]?.name || 'Unknown Breed' }}</h3>
-  <p *ngIf="dog.breeds?.length">Temperament: {{ dog.breeds?.[0]?.temperament }}</p>
+  <p *ngIf="dog.breeds?.length">
+    Temperament: {{ dog.breeds?.[0]?.temperament }}
+  </p>
 </div>

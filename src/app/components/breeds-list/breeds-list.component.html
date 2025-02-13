@@ -8,7 +8,6 @@
       placeholder="Search by breed..."
     />
   </div>
-
   <div class="breed-grid">
     <div *ngFor="let breed of filteredBreeds" (click)="onBreedClick(breed)">
       {{ breed.name }}
