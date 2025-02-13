@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicesDogService } from 'src/app/services-dog.service';
+import { ApiDogService } from 'src/app/api-dog.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class BreedsListComponent implements OnInit {
   filteredBreeds: any[] = [];
   searchQuery: string = '';
 
-  constructor(private dogService: ServicesDogService, private router: Router) {}
+  constructor(private dogService: ApiDogService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadBreeds();

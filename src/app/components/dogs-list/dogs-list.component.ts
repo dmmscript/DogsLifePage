@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicesDogService } from 'src/app/services-dog.service';
+import { ApiDogService } from 'src/app/api-dog.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ export class DogsListComponent implements OnInit {
   searchQuery: string = '';
   selectedBreed: string = '';
 
-  constructor(private dogService: ServicesDogService, private router: Router) {}
+  constructor(private dogService: ApiDogService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadDogs();

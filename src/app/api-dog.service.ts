@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class ServicesDogService {
+export class ApiDogService {
   private apiUrl = environment.apiUrl;
   private apiKey = environment.apiKey;
   private breedsUrl = environment.breedsUrl;
