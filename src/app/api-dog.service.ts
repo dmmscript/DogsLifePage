@@ -28,7 +28,8 @@ export class ApiDogService {
             dog.breeds.length > 0 &&
             breedName !== 'Unknown Breed' &&
             dog.url !== null &&
-            dog.breeds[0]?.temperament !== null &&
+            dog.breeds[0]?.temperament &&
+            typeof dog.breeds[0]?.temperament === 'string' &&
             dog.breeds[0]?.temperament.length > 15;
 
           if (isValid && !uniqueBreeds.has(breedName)) {
